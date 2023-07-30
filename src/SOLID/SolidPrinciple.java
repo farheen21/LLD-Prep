@@ -95,16 +95,36 @@ class Invoice {
     }
 }
 
+// Changing for Open closed Principle
+// what is suggested that every class should be open for extension but closed for modification
+//It mostly plays with interface and show the oop piller of abstractions
 
-class InvoiceDao{
-    Invoice invoice;
-    public  InvoiceDao(Invoice invoice){
-        this.invoice = invoice;
-    }
-    public void saveToDB(){
+interface InvoiceDao{
+    public void save(Invoice invoice);
+}
 
+class DBInvoiceDao implements  InvoiceDao{
+    @Override
+    public void save(Invoice invoice) {
+      System.out.println("Saving to SQL DB");
     }
 }
+
+class FileInvoiceDB implements InvoiceDao {
+    @Override
+    public void save(Invoice invoice) {
+        System.out.println("Saving to File DB");
+    }
+}
+
+class NoSQLInvoiceDB implements InvoiceDao{
+    @Override
+    public void save(Invoice invoice) {
+        System.out.println("Saving to NO SQL Mongo DB");
+    }
+}
+
+
 
 
 class Invoiceprinter{
