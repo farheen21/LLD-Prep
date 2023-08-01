@@ -147,3 +147,28 @@ class Invoiceprinter{
 
     }
 }
+
+// Liskove Substitue Principle
+
+// Fourth Interface Segmented Principle
+//Interface should be breaks into small small segment such that no client has to
+// implement unnecessary methods|
+
+interface ResturantEmployee {
+    public void serveFood();
+
+}
+
+//Now ResturantEmployee is wrongly implemented whatever class will implements it has to give
+//method body to each and very method so we can break it like this
+interface ResturantWaiter{
+    public void washDishes();
+}
+interface ResturantChef{
+    public void cookFood();
+}
+
+// Depndancy Inversion Principle
+// class should depend on interface rather than concrete class
+
+
