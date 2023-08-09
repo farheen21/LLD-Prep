@@ -8,13 +8,17 @@ public class Main {
         Thread thread1 = new Thread(t1);
         Thread thread2 = new Thread(t2);
 
+        ExtendingThreadsClass threadsClass = new ExtendingThreadsClass("ThreadWithThreadClass");
+
+        threadsClass.start();
+
         try {
             thread1.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-        thread2.start();
-        thread1.start();
+//        thread2.start();
+//        thread1.start();
     }
 }
